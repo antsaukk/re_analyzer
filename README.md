@@ -58,5 +58,5 @@ Done. Output collected.
 2: Covering problem of the 3 regular graph with stars of sizes [1, 2] possibly converges.
 ```
 
-*Important: consider computational time. Problems in original form will take longer time on graphs with degree > 6. Relaxations are sloweron degree > 5.*
+*Important: consider computational time. Problems in original form will take longer time on graphs with degree > 6. Relaxations are slower on degree > 5.*
 
