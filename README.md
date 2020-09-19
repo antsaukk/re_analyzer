@@ -3,4 +3,4 @@ Command line tool for generation, execution and analysis of star-cover problems 
 
 
 Usage: 
-python3.8 reanalyzer.py --file_name <file.txt> --iterations <iterations> --star_size <star_size>.
+python3.8 reanalyzer.py --file_name <file.txt> --iterations <iterations> --star_size <star_size>
