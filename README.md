@@ -2,7 +2,7 @@
 Command line tool for generation, execution on round-eliminator and analysis of results for star-cover problems on d-regular graphs expressed in bipartite edge-labelling formalism.
 
 
-*### Usage:* 
+### *Usage:* 
 python3.8 reanalyzer.py --file_name file.txt --iterations iterations --star_size star_size
 
 
