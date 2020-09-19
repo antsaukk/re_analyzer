@@ -47,7 +47,7 @@ Relax divergent problems? [Y/N]: Y
 Problems are relaxed. Display relaxations? [Y/N]: N
 Continue with round-eliminating? [Y/N]: Y
 
-LAUNCHING RE WITH 12 ITERATIONS AND STAR SIZE 3 
+LAUNCHING RE WITH 12 ITERATIONS ON 3-REGULAR GRAPH
 
 ROUND-ELIMINATING PROBLEM: 1
 Done. Output collected.
