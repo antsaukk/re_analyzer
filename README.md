@@ -6,7 +6,8 @@ Command line tool for generation, execution on round-eliminator and analysis of 
 python3.8 reanalyzer.py --file_name file.txt --iterations iterations --star_size star_size
 
 
-*or* 
+### *or* 
+
 python3.8 reanalyzer.py -h 
 
 for instructions.
