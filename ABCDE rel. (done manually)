@@ -1,0 +1,665 @@
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+---------------------------------------------
+δ=3, k=3
+
+A A C
+A A B
+A B B 
+
+A A 
+B C
+
+<=>
+
+A AB BC
+
+A A 
+B C
+
+is divergent.
+
+Relax:
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE CDE ABCDE
+E ABCDE ABCDE
+
+B B
+D C
+A E
+
+is fixed point. 
+--------------------------------------------
+δ=3, k=2
+
+A A C
+A A B
+B B B 
+
+A A 
+B C
+
+<=>
+
+A A BC
+B B B
+
+A A 
+B C
+
+is convergent.
+
+Relax:
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE BE CDE 
+DE DE DE
+E ABCDE ABCDE
+
+B B
+D C
+A E
+
+is fixed point. 
+--------------------------------------------
+δ=3, k=1
+
+A A C
+A B B
+B B B 
+
+A A 
+B C
+
+<=>
+
+A A C
+AB B B
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE BE CE
+DE DE ABCDE
+E ABCDE ABCDE 
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=4, k=1
+
+A A A C
+A A B B 
+A B B B
+B B B B
+
+A A 
+B C
+
+<=>
+
+A A A C
+AB AB B B
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^4 CDE ABCDE^k-1 ?
+DE^2 ABCDE^2
+E ABCDE^3
+
+<=> 
+
+BE BE BE CE 
+DE DE ABCDE ABCDE
+E ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=4, k=2
+
+A A A C
+A A A B 
+A B B B
+B B B B
+
+A A 
+B C
+
+<=>
+
+A A A BC
+AB B B B
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^3 CDE ABCDE^0
+DE^3 ABCDE^1
+E ABCDE^3
+
+<=> 
+
+BE BE BE CDE 
+DE DE DE ABCDE
+E ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=4, k=3
+
+A A A C
+A A A B 
+A A B B
+B B B B
+
+A A 
+B C
+
+<=>
+
+A A A BC
+A A B B
+B B B B
+or
+A A AB BC
+B B B B
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^2 CDE ABCDE^1
+DE^4 ABCDE^0
+E ABCDE^3
+
+<=> 
+
+BE BE CDE ABCDE
+DE DE DE DE
+E ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=4, k=4
+
+A A A C
+A A A B 
+A A B B
+A B B B
+
+A A 
+B C
+
+<=>
+
+A A A BC
+A A B B
+A B B B
+or
+A AB AB BC 
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^1 CDE ABCDE^2
+DE^5 ABCDE^-1?
+E ABCDE^3
+
+<=> 
+
+BE CDE ABCDE ABCDE
+E ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=5, k=1
+
+A A A A C
+A A A B B
+A A B B B
+A B B B B
+B B B B B
+
+A A 
+B C
+
+<=>
+
+A A A A C
+AB AB AB B B
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^5 CDE ABCDE^-1 ?
+DE^2 ABCDE^3
+E ABCDE^4
+
+<=> 
+
+BE BE BE BE CE 
+DE DE ABCDE ABCDE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=5, k=2
+
+A A A A C
+A A A A B
+A A B B B
+A B B B B
+B B B B B
+
+A A 
+B C
+
+<=>
+
+A A A A BC
+AB AB B B B
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^4 CDE ABCDE^0 
+DE^3 ABCDE^2
+E ABCDE^4
+
+<=> 
+
+BE BE BE BE CDE 
+DE DE DE ABCDE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=5, k=3
+
+A A A A C
+A A A A B
+A A A B B
+A B B B B
+B B B B B
+
+A A 
+B C
+
+<=>
+
+A A A AB BC
+AB B B B B
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^3 CDE ABCDE^1 
+DE^4 ABCDE^1
+E ABCDE^4
+
+<=> 
+
+BE BE BE CDE ABCDE
+DE DE DE DE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=5, k=4
+
+A A A A C
+A A A A B
+A A A B B
+A A B B B
+B B B B B
+
+A A 
+B C
+
+<=>
+
+A A AB AB BC
+B B B B B
+
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^2 CDE ABCDE^2 
+DE^5 ABCDE^0 ? 
+E ABCDE^4
+
+<=> 
+
+BE BE CDE ABCDE ABCDE
+DE DE DE DE DE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+δ=5, k=5
+
+A A A A C
+A A A A B
+A A A B B
+A A B B B
+A B B B B
+
+A A 
+B C
+
+<=>
+
+A AB AB AB BC
+
+A A
+B C
+
+is divergent.
+
+Relax: 
+
+A->B
+B->D
+C->C
+?->A
+?->E
+
+BE^(δ-(k-1)) CDE ABCDE^(k-2)
+DE^(k+1) ABCDE^(δ-(k+1))
+E ABCDE^(δ-1)
+
+<=>
+
+BE^1 CDE ABCDE^3 
+DE^6 ABCDE^-1 ? 
+E ABCDE^4
+
+<=> 
+
+BE CDE ABCDE ABCDE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+
+Is fixed point.
+--------------------------------------------
+
+A A A A C
+AB AB AB B B
+
+A A
+B C
+
+
+
+
+BE BE BE BE CE 
+DE DE ABCDE ABCDE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+-
+
+
+
+A A A A BC
+AB AB B B B
+
+A A
+B C
+
+
+
+BE BE BE BE CDE 
+DE DE DE ABCDE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+-
+
+
+
+
+A A A AB BC
+AB B B B B
+
+A A
+B C
+
+
+BE BE BE CDE ABCDE
+DE DE DE DE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+-
+
+
+
+A A AB AB BC
+B B B B B
+
+
+A A
+B C
+
+<=>
+
+BE BE CDE ABCDE ABCDE
+DE DE DE DE DE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E
+-
+
+
+
+A AB AB AB BC
+
+A A
+B C
+
+<=>
+
+BE CDE ABCDE ABCDE ABCDE
+E ABCDE ABCDE ABCDE ABCDE
+
+B B
+D C
+A E

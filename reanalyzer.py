@@ -6,16 +6,18 @@ from output_analyzer import *
 
 #launches RE, with specific input problem, retrieves the output
 def launchRoundElim(file_name, iterations): 
-	#process = subprocess.run(["target/release/server", "file", "--file", "test.txt", "--iter", "12"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-	process = subprocess.run(["target/release/server", "file", "--file", file_name, "--iter", iterations], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-	output = process.stdout
-	#print('The output is:\n', process.stdout)
-	#print('---------------------------------------\n')
-	#print('The error is: ', process.stderr)
-	#print("The exit code was: %d" % process.returncode)
+	output = None
+	try: 
+		process = subprocess.run(["target/release/server", "file", "--file", file_name, "--iter", iterations], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+		output = process.stdout
+		#print('The output is:\n', process.stdout)
+	except:
+		print('The error is: ', process.stderr)
+		print("The exit code was: %d" % process.returncode)
+		sys.exit(1)
 	return output
 
-#test cyclic input to RE
+#test function to display cyclic input to RE, also used for user interaction
 def test_ci(cyclic_input): 
 	#print("-------------------TEST START-------------------")
 	for i in range(len(cyclic_input)):
@@ -26,10 +28,9 @@ def test_ci(cyclic_input):
 
 #creates file, writes specific problem to a file, lauches RE
 def set_up_re(cyclic_input, file_name, iterations, star_size): 
-	#output collection
 	problem_output = []
 
-	print("\n*LAUNCHING RE WITH " + str(iterations) + " ITERATIONS AND STAR SIZE " + str(star_size) + " *\n")
+	print("\n*LAUNCHING RE WITH " + str(iterations) + " ITERATIONS ON " + str(star_size) + "-REGULAR GRAPH" + " *\n")
 	for i in range(len(cyclic_input)): 
 		file = open(file_name, "w+")
 		file.write(cyclic_input[i])
@@ -41,9 +42,8 @@ def set_up_re(cyclic_input, file_name, iterations, star_size):
 		#break
 	return problem_output
 
-#print the results
+#dispkay the results of round elimination
 def display(analyzed_output, problem_types, cyclic_input, star_size): 
-	#collection of not fixed point problems
 	divergent_instances = []
 	for i in range(len(analyzed_output)): 
 		if analyzed_output[i] is True: 
@@ -64,7 +64,7 @@ def test_divergent(divergent_problems, star_size):
 		print("\nproblem definition: ")
 		print(divergent_problems[i][1])
 
-#test function to see the form of relaxations
+#display form of relaxation to user
 def display_relaxations(relaxations, canonical, relaxation_types): 
 	print('\n-------------------ABCDE RELAXED PROBLEMS-------------------')
 	for i in range(len(relaxations)): 
@@ -75,7 +75,7 @@ def display_relaxations(relaxations, canonical, relaxation_types):
 #user instructions
 def usage():
 	print('reanalyzer.py --file <file.txt> --iterations <iterations> --star_size <star-size>')
-	print('\nflags: \n-h for help \n--file <file.txt> to write problems \n--iterations <iterations> of round eliminator \n--star_size <star-size> regularity of the graph\n')
+	print('\nflags: \n-h for help \n--file <file.txt> to write problems \n--iterations <iterations> of round eliminator \n--star_size <star_size> regularity of the graph\n')
 
 def main():
 	try: 
@@ -88,10 +88,10 @@ def main():
 			"iterations=",
 			"star_size="
 			])
-	except getopt.GetoptError as err: 
-		print(err)
+	except getopt.GetoptError as error: 
+		print(error)
 		usage()
-		sys.exit(2)
+		sys.exit(1)
 
 	file_name = None
 	iterations = None
@@ -108,15 +108,14 @@ def main():
 			star_size = int(arg)
 		elif opt in("-h", "--help"):
 			usage()
-			sys.exit()
+			sys.exit(0)
 		else:
 			print("Uknown command: " + opt)
 			sys.exit(1)
 
 	if star_size <= 2:
-		print("\n-Please consider problems of size >= 3-\n")
+		print("\nPlease consider problems of size >= 3\n")
 		sys.exit(1)
-	#file_name, iterations, star_size = sys.argv[1:][0], sys.argv[1:][1], int(sys.argv[1:][2])
 
 	try: 
 		#create raw input to RE wrt star size
@@ -137,14 +136,12 @@ def main():
 
 		while True:
 			if (command == "Y"):
-				#test
 				test_ci(cyclic_input)
 				break
 			elif (command == "N"):
 				break
 			else:
 				command = input("Unknown command, please type [Y/N]: ")
-				#sys.exit(2)
 
 		command_1 = input("Continue with round-eliminating? [Y/N]: ")
 
@@ -169,7 +166,6 @@ def main():
 
 		while True:
 			if (command_2 == "Y"):
-				#test
 				test_divergent(divergent_problems, star_size)
 				break
 			elif (command_2 == "N"):
@@ -184,7 +180,7 @@ def main():
 			if (command_3 == "Y"): 
 				#relax the divergent problems
 				relaxations, canonical, relaxation_types = relax_problem(divergent_problems, star_size)
-				break;
+				break
 			elif (command_3 == "N"): 
 				print("Shutting down round-eliminator analyzer.")
 				sys.exit(0)

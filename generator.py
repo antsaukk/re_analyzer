@@ -79,12 +79,11 @@ def formulate_problems(active_fixed, active_permutations, passive):
 			#print(cyclic_input)
 	return cyclic_input, problem_types
 
-#test function to see the form of relaxations
-#def display_relaxations(relaxations, canonical, relaxation_types): 
-#	print('\n-------------------ABCDE RELAXED PROBLEMS-------------------')
-#	for i in range(len(relaxations)): 
-#		print("\n(" + str(i + 1) + ")\n")
-#		print("Covering problem with stars: " + str(relaxation_types[i]) + "\n\n<=>\n\n" + canonical[i] + '\n\n' + '=>' + '\n\n' + relaxations[i])
+#test function to see the form of relaxations used for testing during development
+def display_relaxations(relaxations, canonical, relaxation_types): 
+	for i in range(len(relaxations)): 
+		print("\n(" + str(i + 1) + ")\n")
+		print("Covering problem with stars: " + str(relaxation_types[i]) + "\n\n<=>\n\n" + canonical[i] + '\n\n' + '=>' + '\n\n' + relaxations[i])
 
 
 # BE^(δ-(k-1)) CDE ABCDE^(k-2)
@@ -143,7 +142,7 @@ def relax_problem(divergent_problems, delta):
 	canonical.append(canonical_conraction_1)
 
 
-	# use algorithm below to formulate non-boundary cases when (δ!=k && k!=1) or star_size != 3
+	# use algorithm below to formulate non-boundary cases when (δ!=k && k!=1) or star_size > 3
 	#
 	# BE^(δ-(k-1)) CDE ABCDE^(k-2)
 	# DE^(k+1) ABCDE^(δ-(k+1))

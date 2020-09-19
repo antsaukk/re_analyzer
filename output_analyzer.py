@@ -1,5 +1,5 @@
 
-#check if the problem diverges by identifying the system' interruption message
+#check if the problem diverges by identifying the system's interruption message
 def check_approximate_convergence(problem_output):
 	print("---Checking approximate convergence---")
 	results = []
