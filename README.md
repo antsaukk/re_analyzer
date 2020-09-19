@@ -8,8 +8,8 @@ python3.8 reanalyzer.py --file_name file.txt --iterations iterations --star_size
 python3.8 reanalyzer.py -h 
 for instructions.
 
-#Example: 
-'''
+# Example: 
+```
 python3.8 reanalyzer.py --file_name tp.txt --iterations 12 --star_size 3
 Problems in canonical form are formulated, do you want to display the input? [Y/N]: N
 Continue with round-eliminating? [Y/N]: Y
@@ -52,7 +52,7 @@ Done. Output collected.
 ---Checking approximate convergence---
 1: Covering problem of the 3 regular graph with stars of sizes [2, 3] possibly converges.
 2: Covering problem of the 3 regular graph with stars of sizes [1, 2] possibly converges.
-'''
+```
 
 *Important: consider computational time. Problems in original form will take longer time on graphs with degree > 6. Relaxations are slower, computational time for degree > 5 is considered significantly slower.*
 
